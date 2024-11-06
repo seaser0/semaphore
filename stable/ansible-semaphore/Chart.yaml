@@ -1,13 +1,4 @@
 annotations:
-  artifacthub.io/license: Apache-2.0
-  artifacthub.io/links: |-
-    - name: Source
-      url: https://github.com/ansible-semaphore/semaphore
-    - name: Chart
-      url: https://github.com/cloudhippie/charts/tree/master/stable/ansible-semaphore
-  artifacthub.io/signKey: |
-    fingerprint: 2B62F542C0C5614F8B4625AE0DDA0DEB51EF789C
-    url: https://raw.githubusercontent.com/cloudhippie/charts/master/cloudhippie.key
 apiVersion: v2
 appVersion: 2.10.35
 dependencies:
@@ -27,9 +18,9 @@ keywords:
 - awx
 - tower
 maintainers:
-- email: thomas@webhippie.de
-  name: tboerger
-  url: https://github.com/tboerger
+- email: s34s3r@gmail.com 
+  name: mkaufmann
+  url: https://github.com/seaser0
 name: ansible-semaphore
 sources:
 - https://github.com/ansible-semaphore/semaphore
