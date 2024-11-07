@@ -84,3 +84,31 @@ admin:
 
   # -- Key used within secret for email
   emailKey: email
+
+database:
+  # -- Type of database backend
+  type: postgressql
+
+  # -- Read username from secret
+  usernameFromSecret: true
+
+  # -- Username for database
+  username: semaphore
+
+  # -- Key used within secret for username
+  usernameKey: username
+
+  # -- Password for database
+  password: c1FwakJNMGY0aEhDMnEwSUMybGVmME5veE1ESnladTRzTWZ1RHU2UlFEeE1HbmlsZXhscHZIWktaOXFSMFhGUg==
+
+  # -- Key used within secret for password
+  passwordKey: password
+
+  # -- Host for database connection
+  host: 192.168.1.232 
+
+  # -- Port for database connection
+  port: 5432
+
+  # -- Name of the used database
+  name: semaphore
