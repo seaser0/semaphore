@@ -80,7 +80,7 @@ admin:
   passwordKey: password
 
   # -- Email for local admin
-  email: s34s3r@gmail.com
+  email: "s34s3r@gmail.com"
 
   # -- Key used within secret for email
   emailKey: email
