@@ -12,12 +12,23 @@ ingress:
       paths:
         - path: /
           pathType: Prefix
+          backend:
+            service:
+              name: semaphore-ansible-semaphore
+              port:
+                name: https
 
   # -- Optional TLS configuration for ingress
-  tls: []
+  tls: 
+  - hosts:
+    - semaphore.nevit.ch  # Update this with your actual domain
+    secretName: semaphore-secret-tls  # Your pre-created TLS secret
 
   # -- Additional annotations for the ingress
-  annotations: {}
+  annotations: 
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod # if you're using cert-manager for automatic TLS
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 
 general:
   # -- Host to access Semaphore
@@ -30,13 +41,13 @@ general:
   tmpPath: /tmp/semaphore
 
   # -- Maximum parallel tasks
-  maxParallelTasks: 0
+  maxParallelTasks: 20
 
   # -- Disable password login
-  passwordLoginDisable: false
+  passwordLoginDisable: true
 
   # -- Allow non-admins to create projects
-  nonAdminCanCreateProject: false
+  nonAdminCanCreateProject: true
 
   # -- Enable usage of remote runners
   useRemoteRunner: false
@@ -46,105 +57,3 @@ general:
 
   # -- Additional Python packages
   additionalPythonPackages: []
-
-database:
-  # -- Type of database backend
-  type: postgresql
-
-  # -- Read username from secret
-  usernameFromSecret: true
-
-  # -- Username for database
-  username: semaphore
-
-  # -- Key used within secret for username
-  usernameKey: username
-
-  # -- Password for database
-  password: sQpjBM0f4hHC2q0IC2lef0NoxMDJyZu4sMfuDu6RQDxMGnilexlpvHZKZ9qR0XFR
-
-  # -- Key used within secret for password
-  passwordKey: password
-
-  # -- Existing secret to use for credentials
-  existingSecret:
-
-  # -- Host for database connection
-  host: cnpg-cluster-semaphore-rw.cnpg01
-
-  # -- Port for database connection
-  port: 5432
-
-  # -- Name of the used database
-  name: semaphore
-
-  # -- Options for database connection
-  options: {}
-
-  # -- Path for the boltdb
-  path: /var/lib/semaphore/database.boltdb
-
-admin:
-  # -- Create an local admin user
-  create: true
-
-  # -- Fullname for local admin
-  fullname: Admin
-
-  # -- Key used within secret for fullname
-  fullnameKey: fullname
-
-  # -- Username for local admin
-  username: admin
-
-  # -- Key used within secret for username
-  usernameKey: username
-
-  # -- Password for local admin
-  password: k2q75x6559A5f$
-
-  # -- Key used within secret for password
-  passwordKey: password
-
-  # -- Email for local admin
-  email: s34s3r@gmail.com
-
-  # -- Key used within secret for email
-  emailKey: email
-
-  # -- Existing secret to use for admin
-  existingSecret:
-
-postgresql:
-  # -- Enable postgresql dependency
-  enabled: false
-
-  # -- Override fullname of postgresql dependency
-  fullnameOverride: postgresql
-
-  # -- Architecture for postgresql
-  architecture: standalone
-
-  auth:
-    # -- Database created for semaphore
-    database: semaphore
-
-    # -- Username for semaphore database
-    username: semaphore
-
-    # -- Password for semaphore database
-    password: sQpjBM0f4hHC2q0IC2lef0NoxMDJyZu4sMfuDu6RQDxMGnilexlpvHZKZ9qR0XFR
-
-  serviceAccount:
-    # -- Create service account for postgresql
-    create: true
-
-  metrics:
-    # -- Enable metrics for postgresql
-    enabled: true
-
-    serviceMonitor:
-      # -- Enable service monitor for postgresql
-      enabled: false
-
-...
