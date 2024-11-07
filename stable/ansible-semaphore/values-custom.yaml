@@ -64,11 +64,23 @@ admin:
   # -- Fullname for local admin
   fullname: Admin
 
+  # -- Key used within secret for fullname
+  fullnameKey: fullname
+
   # -- Username for local admin
   username: admin
+
+  # -- Key used within secret for username
+  usernameKey: username
 
   # -- Password for local admin
   password: admin
 
+  # -- Key used within secret for password
+  passwordKey: password
+
   # -- Email for local admin
-  email: s34s3r@nevit.ch
+  email: s34s3r@gmail.com
+
+  # -- Key used within secret for email
+  emailKey: email
