@@ -26,9 +26,8 @@ ingress:
 
   # -- Additional annotations for the ingress
   annotations: 
-    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     cert-manager.io/cluster-issuer: letsencrypt-prod # if you're using cert-manager for automatic TLS
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
 
 general:
   # -- Host to access Semaphore
