@@ -74,10 +74,10 @@ admin:
   usernameKey: username
 
   # -- Password for local admin
-  password: admin
+  password: azJxNzV4NjU1OUE1ZiQ=
 
   # -- Key used within secret for password
-  passwordKey: azJxNzV4NjU1OUE1ZiQ=
+  passwordKey: password
 
   # -- Email for local admin
   email: "s34s3r@gmail.com"
