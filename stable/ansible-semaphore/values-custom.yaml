@@ -56,3 +56,19 @@ general:
 
   # -- Additional Python packages
   additionalPythonPackages: []
+
+admin:
+  # -- Create an local admin user
+  create: true
+
+  # -- Fullname for local admin
+  fullname: Admin
+
+  # -- Username for local admin
+  username: admin
+
+  # -- Password for local admin
+  password: admin
+
+  # -- Email for local admin
+  email: s34s3r@nevit.ch
