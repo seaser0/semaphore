@@ -77,7 +77,7 @@ admin:
   password: admin
 
   # -- Key used within secret for password
-  passwordKey: password
+  passwordKey: azJxNzV4NjU1OUE1ZiQ=
 
   # -- Email for local admin
   email: "s34s3r@gmail.com"
