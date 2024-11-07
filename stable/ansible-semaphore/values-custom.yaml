@@ -87,7 +87,7 @@ admin:
 
 database:
   # -- Type of database backend
-  type: postgressql
+  type: postgresql
 
   # -- Read username from secret
   usernameFromSecret: true
