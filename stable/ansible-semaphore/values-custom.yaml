@@ -43,7 +43,7 @@ general:
   maxParallelTasks: 20
 
   # -- Disable password login
-  passwordLoginDisable: true
+  passwordLoginDisable: false
 
   # -- Allow non-admins to create projects
   nonAdminCanCreateProject: true
