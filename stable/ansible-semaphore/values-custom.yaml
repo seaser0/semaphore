@@ -99,7 +99,7 @@ database:
   usernameKey: username
 
   # -- Password for database
-  password: c1FwakJNMGY0aEhDMnEwSUMybGVmME5veE1ESnladTRzTWZ1RHU2UlFEeE1HbmlsZXhscHZIWktaOXFSMFhGUg==
+  password: sQpjBM0f4hHC2q0IC2lef0NoxMDJyZu4sMfuDu6RQDxMGnilexlpvHZKZ9qR0XFR
 
   # -- Key used within secret for password
   passwordKey: password
